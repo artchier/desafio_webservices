@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clTopLogin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_square"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvTopLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/roboto"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:text="Welcome to the Marvel HQ's"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@id/clTopLogin"
+        app:layout_constraintStart_toStartOf="@id/clTopLogin"
+        app:layout_constraintTop_toTopOf="@id/clTopLogin" />
+
+</LinearLayout>
