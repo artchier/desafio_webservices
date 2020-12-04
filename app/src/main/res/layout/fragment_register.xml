@@ -5,7 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".ui.LoginFragment">
+    tools:context=".ui.RegisterFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tbRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/back"
+        app:titleTextColor="@color/white" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
@@ -25,20 +36,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline1" />
 
-    <TextView
-        android:id="@+id/tvTopLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/roboto"
-        android:padding="10dp"
-        android:text="Welcome to the Marvel HQ's"
-        android:textColor="@color/white"
-        android:textSize="22sp"
+    <include
+        layout="@layout/layout_circle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toTopOf="@id/clbodyRegister"
         app:layout_constraintEnd_toEndOf="@id/topRegister"
         app:layout_constraintStart_toStartOf="@id/topRegister"
-        app:layout_constraintTop_toTopOf="@id/topRegister" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clbodyRegister"
@@ -56,17 +62,41 @@
         app:layout_constraintTop_toTopOf="@id/guideline1">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilEmail"
+            android:id="@+id/tilName"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="@string/e_mail"
+            android:hint="@string/name"
             app:boxBackgroundMode="filled"
             app:hintTextColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/e_mail"
+            app:boxBackgroundMode="filled"
+            app:hintTextColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilName">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/e_mail"
@@ -103,43 +133,16 @@
                 android:paddingEnd="0dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:id="@+id/llCheckBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilPassword">
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="-7dp"
-                android:text="@string/remember" />
-        </LinearLayout>
-
         <Button
             android:id="@+id/btLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:text="@string/log_in"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/llCheckBox" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btCreateAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/roboto_light"
-            android:text="@string/create_account"
-            android:textAllCaps="false"
-            android:textColor="#343F4B"
+            android:layout_marginBottom="5dp"
+            android:text="@string/save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btLogin" />
+            app:layout_constraintTop_toBottomOf="@id/tilPassword" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
