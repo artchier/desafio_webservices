@@ -10,5 +10,13 @@
     <string name="register">Register</string>
     <string name="name">Name</string>
     <string name="save">SAVE</string>
+    <string name="comic_cover">Comic Cover</string>
+    <string name="marvel_logo">Marvel Logo</string>
+    <string name="thumbnail_da_hq">thumbnail da hq</string>
+    <string name="pages">Pages:</string>
+    <string name="price">Price:</string>
+    <string name="published">Published:</string>
+    <string name="promotional_art">Promotional art</string>
+    <string name="cover_hq_bigger">Cover HQ Bigger</string>
 
 </resources>

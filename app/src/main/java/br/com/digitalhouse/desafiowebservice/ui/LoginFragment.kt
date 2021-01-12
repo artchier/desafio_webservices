@@ -18,6 +18,9 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
+        view.btLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_comicFragment)
+        }
         view.btCreateAccount.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }

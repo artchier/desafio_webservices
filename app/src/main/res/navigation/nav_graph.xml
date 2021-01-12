@@ -9,11 +9,11 @@
         android:id="@+id/splashFragment"
         android:name="br.com.digitalhouse.desafiowebservice.ui.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:exitAnim="@anim/fragment_fade_exit"/>
+            app:exitAnim="@anim/fragment_fade_exit" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -23,13 +23,58 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment"
-            app:enterAnim="@anim/slide_out"
+            app:enterAnim="@anim/slide_up"
             app:exitAnim="@anim/wait"
-            app:popExitAnim="@anim/slide_in" />
+            app:popExitAnim="@anim/slide_down" />
+        <action
+            android:id="@+id/action_loginFragment_to_comicFragment"
+            app:destination="@id/navigation2"
+            app:enterAnim="@anim/slide_left_in"
+            app:exitAnim="@anim/slide_right_in"
+            app:popEnterAnim="@anim/slide_left_out"
+            app:popExitAnim="@anim/slide_right_out" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="br.com.digitalhouse.desafiowebservice.ui.RegisterFragment"
         android:label="@string/register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_comicFragment"
+            app:destination="@id/navigation2"
+            app:enterAnim="@anim/slide_left_in"
+            app:exitAnim="@anim/slide_right_in"
+            app:popEnterAnim="@anim/slide_left_out"
+            app:popExitAnim="@anim/slide_right_out"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <navigation
+        android:id="@+id/navigation2"
+        app:startDestination="@id/comicFragment">
+        <fragment
+            android:id="@+id/comicFragment"
+            android:name="br.com.digitalhouse.desafiowebservice.ui.ComicFragment"
+            android:label="fragment_comic"
+            tools:layout="@layout/fragment_comic">
+            <action
+                android:id="@+id/action_comicFragment_to_detailFragment"
+                app:destination="@id/detailFragment"
+                app:enterAnim="@anim/slide_up"
+                app:exitAnim="@anim/wait"
+                app:popExitAnim="@anim/slide_down"  />
+        </fragment>
+        <fragment
+            android:id="@+id/detailFragment"
+            android:name="br.com.digitalhouse.desafiowebservice.ui.DetailFragment"
+            tools:layout="@layout/fragment_detail" >
+            <action
+                android:id="@+id/action_detailFragment_to_thumbnailFragment"
+                app:destination="@id/thumbnailFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/thumbnailFragment"
+            android:name="br.com.digitalhouse.desafiowebservice.ui.ThumbnailFragment"
+            tools:layout="@layout/fragment_thumbnail" />
+    </navigation>
 </navigation>

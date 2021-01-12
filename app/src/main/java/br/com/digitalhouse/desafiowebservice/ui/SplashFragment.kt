@@ -8,15 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import br.com.digitalhouse.desafiowebservice.R
-import br.com.digitalhouse.desafiowebservice.viewmodel.SplashViewModel
+import br.com.digitalhouse.desafiowebservice.viewmodel.MyViewModel
 
 class SplashFragment : Fragment() {
-    private lateinit var splashViewModel: SplashViewModel
+    private lateinit var myViewModel: MyViewModel
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        splashViewModel = ViewModelProvider(this).get(SplashViewModel::class.java)
+        myViewModel = ViewModelProvider(this).get(MyViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -25,7 +25,7 @@ class SplashFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_splash, container, false)
-        splashViewModel.initSplashScreen(view)
+        myViewModel.initSplashScreen(view)
         /*findNavController()
             .navigate(R.id.action_splashFragment_to_loginFragment)*/
         return view
